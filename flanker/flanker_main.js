@@ -3,7 +3,7 @@
 var repo_site = "https://cdn.jsdelivr.net/gh/kywch/jsPsych-in-Qualtrics/flanker/";
 
 /* experiment parameters */
-var reps_per_trial_type = 4;
+var reps_per_trial_type = 6;
 
 /*set up welcome block*/
 var welcome = {
@@ -111,4 +111,4 @@ var timeline = [];
 timeline.push(welcome);
 timeline.push(instructions);
 timeline.push(test);
-timeline.push(debrief);
+//timeline.push(debrief);
