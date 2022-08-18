@@ -4,6 +4,7 @@
 var repo_site = "https://jeancostatri.github.io/jsPsych-in-Qualtrics/flanker/";
 
 /* experiment parameters */
+var reps_per_trial_type_p = 1;
 var reps_per_trial_type = 50;
 
 /*set up welcome block*/
@@ -35,6 +36,25 @@ var instructions = {
         "<p>Press any key to begin the test.</p>",
     post_trial_gap: 1000
 };
+
+ var test_stimuli_p = [
+    {
+      stimulus: repo_site + "img/con1.png",
+      data: { stim_type: 'congruent', direction: 'left'}
+    },
+    {
+      stimulus: repo_site + "img/con2.png",
+      data: { stim_type: 'congruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/inc1.png",
+      data: { stim_type: 'incongruent', direction: 'right'}
+    },
+    {
+      stimulus: repo_site + "img/inc2.png",
+      data: { stim_type: 'incongruent', direction: 'left'}
+    }
+  ];
 
 /*defining stimuli*/
 var test_stimuli = [{
