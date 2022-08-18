@@ -17,9 +17,10 @@ var instructions = {
     type: "html-keyboard-response",
     stimulus: "<p>In this task, you will see five arrows on the screen, like the example below.</p>" +
         "<img src='" + repo_site + "img/inc1.png'></img>" +
-        "<p>Press the left arrow key if the middle arrow is pointing left. (<)</p>" +
-        "<p>Press the right arrow key if the middle arrow is pointing right. (>)</p>" +
-        "<p>Press any key to begin.</p>",
+        "<p>You should press the left arrow key if the middle arrow is pointing left. (<)</p>" +
+        "<p>You should press the right arrow key if the middle arrow is pointing right. (>)</p>" +
+        "<p>In the example above, for instance, you should press the right arrow key (>)</p>" +
+        "<p>Press any key to begin the test.</p>",
     post_trial_gap: 1000
 };
 
