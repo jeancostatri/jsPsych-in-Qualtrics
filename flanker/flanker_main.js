@@ -13,13 +13,26 @@ var welcome = {
 };
 
 /*set up instructions block*/
+var instructionsP = {
+    type: "html-keyboard-response",
+    stimulus: "<p>In this task, you will see five arrows on the screen, like the example below.</p>" +
+        "<img src='" + repo_site + "img/inc1.png'></img>" +
+        "<p>You should press the left arrow key if the middle arrow is pointing left. (<)</p>" +
+        "<p>You should press the right arrow key if the middle arrow is pointing right. (>)</p>" +
+        "<p>In the example above, for instance, you should press the right arrow key (>)</p>" +
+        "<p>Press any key to begin a practice test.</p>",
+    post_trial_gap: 1000
+};
+
+/*set up instructions block*/
 var instructions = {
     type: "html-keyboard-response",
     stimulus: "<p>In this task, you will see five arrows on the screen, like the example below.</p>" +
         "<img src='" + repo_site + "img/inc1.png'></img>" +
-        "<p>Press the left arrow key if the middle arrow is pointing left. (<)</p>" +
-        "<p>Press the right arrow key if the middle arrow is pointing right. (>)</p>" +
-        "<p>Press any key to begin.</p>",
+        "<p>You should press the left arrow key if the middle arrow is pointing left. (<)</p>" +
+        "<p>You should press the right arrow key if the middle arrow is pointing right. (>)</p>" +
+        "<p>In the example above, for instance, you should press the right arrow key (>)</p>" +
+        "<p>Press any key to begin the test.</p>",
     post_trial_gap: 1000
 };
 
@@ -53,6 +66,25 @@ var test_stimuli = [{
         }
     }
 ];
+
+/* defining testP timeline */
+var testP = {
+    timeline: [{
+      type: 'image-keyboard-response',
+      choices: [37, 39],
+      trial_duration: 1500,
+      stimulus: jsPsych.timelineVariable('stimulus'),
+      data: jsPsych.timelineVariable('data'),
+      post_trial_gap: function () {
+        return Math.floor(Math.random() * 1500) + 500;
+      }
+    }],
+    timeline_variables: test_stimuli_p,
+    sample: {
+      type: 'fixed-repetitions',
+      size: reps_per_trial_type_p
+    }
+  };
 
 /* defining test timeline */
 var test = {
@@ -110,6 +142,8 @@ var debrief = {
 /*set up experiment structure*/
 var timeline = [];
 timeline.push(welcome);
+timeline.push(instructionsP);
+timeline.push(testP);
 timeline.push(instructions);
 timeline.push(test);
 //timeline.push(debrief);
